@@ -73,6 +73,13 @@ public class AnalizadorNumeros {
 }
 ```
 
+## Ejemplo de ejecución
+
+```text
+SI
+5.71
+BIEN
+```
 ## Autor 
 Jose Vicente Ros Campos
 
