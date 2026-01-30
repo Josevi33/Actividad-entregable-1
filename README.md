@@ -71,10 +71,7 @@ public class AnalizadorNumeros {
         return (double) suma / numeros.length;
     }
 }
-
-
-
-
+```
 
 ## Autor 
 Jose Vicente Ros Campos
