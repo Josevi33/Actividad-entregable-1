@@ -1,0 +1,75 @@
+package ejercicios;
+
+/** 
+* Clase que analiza un array de números: 
+* - Comprueba si el valor máximo se repite 
+* - Calcula la media 
+* - Evalúa si la media es suficiente 
+* 
+* @author Jose Vicente Ros Campos 
+* @version 1.0 
+*/ 
+public class AnalizadorNumeros { 
+ 
+    public static void main(String[] args) { 
+ 
+        int[] numeros = {5, 7, 3, 7, 2, 9, 7}; 
+ 
+        int maximo = obtenerMaximo(numeros); 
+        boolean maximoRepetido = estaRepetido(numeros, maximo); 
+ 
+        System.out.println(maximoRepetido ? "SI" : "NO"); 
+ 
+        double media = calcularMedia(numeros); 
+        System.out.println(media); 
+ 
+        System.out.println(media >= 5 ? "BIEN" : "MAL"); 
+    } 
+ 
+    /** 
+     * Obtiene el valor máximo de un array de enteros. 
+     * 
+     * @param numeros array de números 
+     * @return valor máximo 
+     */ 
+    public static int obtenerMaximo(int[] numeros) { 
+        int maximo = numeros[0]; 
+        for (int i = 1; i < numeros.length; i++) { 
+            if (numeros[i] > maximo) { 
+                maximo = numeros[i]; 
+            } 
+        } 
+        return maximo; 
+    } 
+ 
+    /** 
+     * Comprueba si un número aparece más de una vez en el array. 
+     * 
+     * @param numeros array de números 
+     * @param valor   valor a comprobar 
+     * @return true si se repite, false en caso contrario 
+     */ 
+    public static boolean estaRepetido(int[] numeros, int valor) { 
+        int contador = 0; 
+        for (int numero : numeros) { 
+            if (numero == valor) { 
+                contador++; 
+            } 
+        } 
+        return contador > 1; 
+    } 
+ 
+    /** 
+     * Calcula la media de un array de enteros. 
+     * 
+     * @param numeros array de números 
+     * @return media  
+     */ 
+    public static double calcularMedia(int[] numeros) { 
+        int suma = 0; 
+        for (int numero : numeros) { 
+            suma += numero; 
+        } 
+        return (double) suma / numeros.length; 
+    } 
+}
